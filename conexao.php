@@ -1,34 +1,32 @@
-<?php
+<?php //conexao.php
+class Conexao{
+    private static $dbNome = 'imobi'; 
+    private static $dbHost = 'localhost';
+    private static $dbUsuario  = 'root'; 
+    private static $dbSenha = ''; 
+     private static $cont= null; 
 
-    class Conexao{
-        private static $dbHost = 'localhost'; 
-        private static $dbName = 'imobi'; 
-        private static $dbUser = 'root'; 
-        private static $dbPwd = ''; 
+     public function __construct(){
+         die ("A Função init não é permitida"); 
+     }
 
-        private static $cont = null; 
-
-        public function __construct(){
-            die ("Passei pelo construtor de conexao");
-        }
-
-        public static function conectar(){
-            if (self::$cont==null){
-                try{
-                  //  self::$cont = new PDO(("mysql:host=localhost;dbname=imobi", "root", "");    
-                  self::$cont = new PDO(("mysql:host=" . self::$dbHost .";dbname=" . self::$dbName , self::$dbUser, self::$dbPwd);   
-                }
-                catch (PDOException $e){
-                    die ($e->getmessage());  
-                }
+     public static function conectar(){
+        if ( null == self::$cont ) {
+            try{
+                self::$cont = new PDO(
+                    "mysql:host=".self::$dbHost.
+                    "; dbname=".self::$dbNome,
+                     self::$dbUsuario, self::$dbSenha);
             }
-            return self::$cont; 
+            catch (PDOException $exception){
+               die($exception->getMessage()); 
+            }
         }
+        return self::$cont; 
+     }
 
-        public static function desconectar() {
-            self::$cont = null; 
-        }
-
-    }
-
+     public static function desconectar(){
+         self::$cont = null; 
+     }
+  }
 ?>
