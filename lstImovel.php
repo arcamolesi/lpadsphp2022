@@ -11,12 +11,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Listar Imoveis</title>
 </head>
 <body>
-    <H1>Listar Imoveis</H1>
-    
-    <table>
+     <div class="card-panel grey darken-1">
+       <H1>Listar Imoveis</H1>
+    </div>
+
+
+    <table class="striped cyan darken-3 grey lighten-4-text text-darken-2">
         <tr>
             <th>ID</th>
             <th>RUA</th>
@@ -36,7 +45,6 @@
         </tr>
         <?php } ?>
     </table>
+    </div>
 </body>
 </html>
-
-
