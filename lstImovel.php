@@ -17,11 +17,19 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Listar Imoveis</title>
 </head>
 <body>
      <div class="card-panel grey darken-1">
-       <H1>Listar Imoveis</H1>
+       <H1>Listar Imoveis
+           <a class="btn-floating btn-large waves-effect waves-light green" 
+              onclick="JavaScript:location.href='frmInsImovel.php'">
+              <i class="material-icons">add</i>
+          </a>
+
+       </H1>
     </div>
 
 

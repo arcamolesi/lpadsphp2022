@@ -21,22 +21,22 @@
             <h1>Cadastro de Imóveis</h1>
         </div>
         <div class="row">
-            <form action="insImov.php" method="post" id="frmInsImvo" name="frmInsImvo" class="col s12">
+            <form action="insImovel.php" method="post" id="frmInsImvo"  class="col s12">
                 <div class="input-field col s8">
                     <label for="lblRua" class="black-text">Informe a rua: </label> 
-                    <input placeholder="" id="txt_rua" type="text">
+                    <input placeholder="" id="txt_rua" name="txtRua" type="text">
                 </div>
                 <div class="input-field col s8">
                     <label for="lblBairro" class="black-text">Informe o Bairro: </label> 
-                    <input placeholder="" id="txt_bairro" type="text">
+                    <input placeholder="" id="txt_bairro" name="txtBairro" type="text">
                 </div>
                 <div class="input-field col s8">
                     <label for="lblCidade" class="black-text">Informe a cidade: </label> 
-                    <input placeholder="" id="txt_cidade" type="text">
+                    <input placeholder="" id="txt_cidade" name="txtCidade" type="text">
                 </div>
                 <div class="input-field col s8">
                     <label for="lblStaus" class="black-text">Informe a Status: </label> 
-                    <input placeholder="" id="txt_Status" type="text">
+                    <input placeholder="" id="txt_Status" name="txtStatus" type="text">
                 </div>
                 <div class = "input-field col s8">
                     <br>
