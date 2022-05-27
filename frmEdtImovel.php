@@ -1,3 +1,17 @@
+<?php 
+   
+    $id = $_GET['id']; 
+
+    include 'conexao.php';
+    $sql = "select * from imovel where id=?;";
+    $pdo = Conexao::conectar(); 
+    $query = $pdo->prepare($sql);
+    $query->execute (array($id));
+    $dados = $query->fetch(PDO::FETCH_ASSOC);
+
+    Conexao::desconectar(); 
+ ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,30 +27,36 @@
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <title>Inserir Dados de Imóvel</title>
+    <title>Editar Dados de Imóvel</title>
 </head>
 <body>
     <div class= "container brown lighten-4  black-text col s12">
         <div class = "brown lighten-2 col s12">
-            <h1>Cadastro de Imóveis</h1>
+            <h1>Editar Imóvel</h1>
         </div>
         <div class="row">
-            <form action="insImovel.php" method="post" id="frmInsImvo"  class="col s12">
+            <form action="edtImovel.php" method="post" id="frmEdtImvo"  class="col s12">
+                <div class="input-field col s8">
+                    <label for="lblid" class="black-text" >ID: <?php echo $dados['id'];?></label>
+                    <br/>
+                    <input type="hidden" name="id" id="id" value="<?php echo $id;?>">
+                </div>
+            
                 <div class="input-field col s8">
                     <label for="lblRua" class="black-text">Informe a rua: </label> 
-                    <input placeholder="" id="txt_rua" name="txtRua" type="text">
+                    <input placeholder="" id="txt_rua" name="txtRua" value="<?php echo $dados['rua']?>" type="text">
                 </div>
                 <div class="input-field col s8">
                     <label for="lblBairro" class="black-text">Informe o Bairro: </label> 
-                    <input placeholder="" id="txt_bairro" name="txtBairro" type="text">
+                    <input placeholder="" id="txt_bairro" name="txtBairro" value="<?php echo $dados['bairro']?>" type="text">
                 </div>
                 <div class="input-field col s8">
                     <label for="lblCidade" class="black-text">Informe a cidade: </label> 
-                    <input placeholder="" id="txt_cidade" name="txtCidade" type="text">
-                </div>
+                    <input placeholder="" id="txt_cidade" name="txtCidade" value="<?php echo $dados['cidade']?>" type="text">
+                </div> 
                 <div class="input-field col s8">
                     <label for="lblStaus" class="black-text">Informe a Status: </label> 
-                    <input placeholder="" id="txt_Status" name="txtStatus" type="text">
+                    <input placeholder="" id="txt_Status" name="txtStatus" value="<?php echo $dados['status']?>" type="text">
                 </div>
                 <div class = "input-field col s8">
                     <br>

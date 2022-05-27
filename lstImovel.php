@@ -33,13 +33,14 @@
     </div>
 
 
-    <table class="striped cyan darken-3 grey lighten-4-text text-darken-2">
+    <table class="striped blue lighten-4">
         <tr>
             <th>ID</th>
             <th>RUA</th>
             <th>BAIRRO</th>
             <th>CIDADE</th>
             <th>STATUS</th>
+            <th>Funções</th> 
         </tr>
         <?php 
            foreach($lstImovel as $imovel) {
@@ -50,7 +51,13 @@
             <td><?php echo $imovel['bairro']?> </td>
             <td><?php echo $imovel['cidade']?> </td>
             <td><?php echo $imovel['status']?> </td>
-        </tr>
+            <td>  <a class="btn-floating btn-small waves-effect waves-light orange"
+                   onclick="JavaScript:location.href='frmEdtImovel.php?id=' + 
+                           <?php echo $imovel['id'];?>">
+                        <i class="material-icons">edit</i>
+                    </a>
+            </td>
+        </tr> 
         <?php } ?>
     </table>
     </div>
