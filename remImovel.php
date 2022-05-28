@@ -1,7 +1,7 @@
 <?php
 
     //programa php para editar dados de imovel
-    $id = trim($_POST['id']); 
+    $id = trim($_GET['id']); 
    
 
    include 'conexao.php';

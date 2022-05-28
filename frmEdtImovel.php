@@ -71,7 +71,7 @@
                     type="button" id="btnVoltar" onclick="JavaScript:location.href='lstImovel.php'">
                     Voltar <i class="material-icons right">arrow_back</i> 
                     </button>
-     
+                    
                 </div>
 
             </form>
