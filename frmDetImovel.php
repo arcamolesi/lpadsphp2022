@@ -73,13 +73,31 @@
                 <br />
                 <br />
                 <div class="row">
+                <a class="waves-effect waves-light btn green"
+                            onclick="JavaScript:location.href='frmInsImovel.php'">
+                            <i class="material-icons right">add</i>Novo</a>
+
+                        <a class="waves-effect waves-light btn orange" onclick="JavaScript:location.href='frmEdtImovel.php?id=' + 
+                           <?php echo $dados['id'];?>">
+                            <i class="material-icons right">edit</i>Editar</a>
+
+                        <a class="waves-effect waves-light btn red"
+                            onclick="JavaScript:remover(<?php echo $dados['id']?>)">
+                            <i class="material-icons right">delete</i>Remover</a>
+
+                        <a class="waves-effect waves-light btn blue" onclick="JavaScript:location.href='lstImovel.php'">
+                            <i class="material-icons right">list</i>Listar</a>
+                </div>
+
+<!-- 
+                <div class="row">
                     <div class="input-field col s12">
                         <a class="waves-effect waves-light btn red" onclick="JavaScript:remover(<?php echo $dados['id']?>)">
                             <i class="material-icons right">delete</i>Remover</a>
                         <a class="waves-effect waves-light btn blue" onclick="JavaScript:location.href='lstImovel.php'">
                             <i class="material-icons right">arrow_back</i>Voltar</a>
                     </div>
-                </div>
+                </div> -->
             
         </div>
     </div>

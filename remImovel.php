@@ -1,6 +1,6 @@
 <?php
 
-    //programa php para editar dados de imovel
+    //programa php para remover dados de imovel
     $id = trim($_GET['id']); 
    
 

@@ -27,13 +27,7 @@
 <body>
     <div class="container deep-orange lighten-5">
         <div class="card-panel grey darken-1">
-            <H1>Listar Imoveis
-                <a class="btn-floating btn-large waves-effect waves-light green"
-                    onclick="JavaScript:location.href='frmInsImovel.php'">
-                    <i class="material-icons">add</i>
-                </a>
-
-            </H1>
+            <H1>Listar Imoveis</H1>
         </div>
 
         <div class="col s10">
@@ -44,8 +38,13 @@
                     <th>BAIRRO</th>
                     <th>CIDADE</th>
                     <th>STATUS</th>
-                    <th>Funções</th>
-                    <th></th>
+                    <th class="center">Funções</th>
+                    <th>
+                        <a class="btn-floating btn-small waves-effect waves-light green"
+                            onclick="JavaScript:location.href='frmInsImovel.php'">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </th>
                 </tr>
                 <?php 
            foreach($lstImovel as $imovel) {
@@ -56,7 +55,8 @@
                     <td><?php echo $imovel['bairro']?> </td>
                     <td><?php echo $imovel['cidade']?> </td>
                     <td><?php echo $imovel['status']?> </td>
-                    <td> <a class="btn-floating btn-small waves-effect waves-light orange" onclick="JavaScript:location.href='frmEdtImovel.php?id=' + 
+                    <td class="center">
+                        <a class="btn-floating btn-small waves-effect waves-light orange" onclick="JavaScript:location.href='frmEdtImovel.php?id=' + 
                            <?php echo $imovel['id'];?>">
                             <i class="material-icons">edit</i>
                         </a>
@@ -64,11 +64,12 @@
                             onclick="JavaScript:remover(<?php echo $imovel['id'];?>)">
                             <i class="material-icons">delete</i>
                         </a>
-                        <a class="btn-floating btn-small waves-effect waves-light red" onclick="JavaScript:location.href='frmDetImovel.php?id=' + 
+                        <a class="btn-floating btn-small waves-effect waves-light  light-blue darken-3" onclick="JavaScript:location.href='frmDetImovel.php?id=' + 
                            <?php echo $imovel['id'];?>">
                             <i class="material-icons">info</i>
                         </a>
                     </td>
+                    <td></td>
                 </tr>
                 <?php } ?>
             </table>
