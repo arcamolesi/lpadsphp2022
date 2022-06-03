@@ -1,5 +1,6 @@
 <?php 
-   
+   include 'menu.php'; 
+
    $id = $_GET['id']; 
 
    include 'conexao.php';

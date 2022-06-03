@@ -1,4 +1,5 @@
 <?php
+   include 'menu.php'; 
    include 'conexao.php';
    $sql = "select * from imovel order by rua;";
    $pdo = conexao::conectar(); 
@@ -81,6 +82,8 @@
 </body>
 
 </html>
+
+<?php include 'footer.php'?> 
 
 <script>
 function remover(id) {
